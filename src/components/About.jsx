@@ -12,7 +12,7 @@ export default function About({ personalInfo }) {
       >
         <div className="flex flex-col items-center md:items-start gap-4">
           <span className="text-xs uppercase tracking-widest text-cyan-400 font-bold">
-            01. Background
+            Background
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
             About Me
@@ -25,4 +25,4 @@ export default function About({ personalInfo }) {
       </motion.div>
     </section>
   );
-}
+}

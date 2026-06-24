@@ -38,7 +38,14 @@ export const projects = [
 ];
 
 export const experience = [
+   {
+    
+    role: "MERN Stack Developer Intern",
+    company: "BISIDIQ SOLUTIONS",
+    period: "2026 - Present",
+  },
   {
+
     role: "MERN Stack Developer Trainee",
     company: "CodeMe International",
     period: "2025 - Present",
@@ -51,8 +58,9 @@ export const experience = [
 ];
 
 export const certifications = [
-  "MERN Stack Development Training",
+  "MERN Stack Development ",
   "ICT Academy Internship Certificate",
+  "MERN STACK INTERN",
   "Prompt Engineering Certification",
 ];
 
