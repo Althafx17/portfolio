@@ -3,65 +3,73 @@ import { motion } from "framer-motion";
 export default function Background() {
   return (
     <div className="fixed inset-0 -z-50 overflow-hidden bg-slate-950 pointer-events-none">
-      {/* Ambient center radial gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.03),transparent_70%)]" />
+      {/* Immersive Sci-fi Background Image with constant slow motion (Ken Burns + Pan) */}
+      <motion.div
+        animate={{
+          scale: [1.04, 1.12, 1.04],
+          x: [-8, 8, -8],
+          y: [-12, 6, -12],
+          rotate: [0, 0.5, -0.5, 0]
+        }}
+        transition={{
+          duration: 38,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute inset-0 bg-cover bg-center opacity-[0.25] sm:opacity-[0.32]"
+        style={{
+          backgroundImage: "url('/sci-fi-bg.jpg')",
+          filter: "brightness(0.85) contrast(1.1)",
+        }}
+      />
+
+      {/* Dark Vignette Overlays for maximum text legibility */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_25%,#030712_92%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/90 via-[#030712]/15 to-[#030712]/90" />
 
       {/* Futuristic Grid Overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.08]"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px',
+          backgroundSize: '60px 60px',
           maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)',
           WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)'
         }}
       />
 
-      {/* Floating Glowing Blobs */}
+      {/* Ambient Moving Blobs behind/over the image for extra depth */}
       <motion.div
         animate={{
-          x: [0, 100, -50, 0],
-          y: [0, -120, 80, 0],
-          scale: [1, 1.25, 0.9, 1],
+          x: [0, 80, -40, 0],
+          y: [0, -80, 50, 0],
+          scale: [1, 1.2, 0.9, 1],
         }}
         transition={{
           duration: 25,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-12 left-10 md:left-1/4 h-[300px] md:h-[450px] w-[300px] md:w-[450px] rounded-full bg-cyan-500/10 blur-[100px] md:blur-[130px]"
+        className="absolute top-1/4 left-1/4 h-[350px] w-[350px] rounded-full bg-cyan-500/[0.06] blur-[100px]"
       />
 
       <motion.div
         animate={{
-          x: [0, -120, 80, 0],
-          y: [0, 100, -120, 0],
-          scale: [1, 0.85, 1.15, 1],
+          x: [0, -80, 40, 0],
+          y: [0, 70, -90, 0],
+          scale: [1, 0.9, 1.1, 1],
         }}
         transition={{
           duration: 30,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-1/3 right-10 md:right-1/4 h-[350px] md:h-[500px] w-[350px] md:w-[500px] rounded-full bg-violet-600/10 blur-[120px] md:blur-[150px]"
-      />
-
-      <motion.div
-        animate={{
-          x: [0, 60, -80, 0],
-          y: [0, 90, -70, 0],
-          scale: [1, 1.15, 0.95, 1],
-        }}
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-12 left-1/3 h-[250px] md:h-[350px] w-[250px] md:w-[350px] rounded-full bg-blue-500/10 blur-[90px] md:blur-[110px]"
+        className="absolute bottom-1/4 right-1/4 h-[400px] w-[400px] rounded-full bg-violet-600/[0.06] blur-[120px]"
       />
     </div>
   );
 }
+
