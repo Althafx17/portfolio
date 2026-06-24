@@ -1,4 +1,6 @@
 // Import components
+import Navbar from "./components/Navbar";
+import Background from "./components/Background";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skill";
@@ -21,33 +23,42 @@ import {
 
 function App() {
   return (
-    <div className="bg-slate-950 text-white min-h-screen font-inter">
-      {/* Hero Section */}
-      <Hero personalInfo={personalInfo} />
+    <div className="bg-slate-950 text-white min-h-screen font-inter relative">
+      {/* Dynamic Animated Background */}
+      <Background />
 
-      {/* About Section */}
-      <About personalInfo={personalInfo} />
+      {/* Floating Glass Navigation */}
+      <Navbar />
 
-      {/* Skills Section */}
-      <Skills skills={skills} />
+      {/* Main Content Layout Container */}
+      <main className="max-w-6xl mx-auto px-6 md:px-8 space-y-12 md:space-y-24">
+        {/* Hero Section */}
+        <Hero personalInfo={personalInfo} />
 
-      {/* Projects Section */}
-      <Projects projects={projects} />
+        {/* About Section */}
+        <About personalInfo={personalInfo} />
 
-      {/* Timeline Section */}
-      <Timeline />
+        {/* Skills Section */}
+        <Skills skills={skills} />
 
-      {/* Experience Section */}
-      <Experience experience={experience} />
+        {/* Projects Section */}
+        <Projects projects={projects} />
 
-      {/* Certifications Section */}
-      <Certifications certifications={certifications} />
+        {/* Journey Section (Timeline + Experience) */}
+        <div id="journey" className="scroll-mt-24 space-y-8 md:space-y-16">
+          <Timeline />
+          <Experience experience={experience} />
+        </div>
 
-      {/* Interests Section */}
-      <Interests interests={interests} />
+        {/* Certifications Section */}
+        <Certifications certifications={certifications} />
 
-      {/* Contact Section */}
-      <Contact personalInfo={personalInfo} />
+        {/* Interests Section */}
+        <Interests interests={interests} />
+
+        {/* Contact Section */}
+        <Contact personalInfo={personalInfo} />
+      </main>
     </div>
   );
 }
