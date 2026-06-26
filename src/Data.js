@@ -35,6 +35,25 @@ export const projects = [
       "Platform connecting mentors and students with shared interests and career goals.",
     tech: ["HTML", "CSS", "JavaScript", "MySQL"],
   },
+  {
+    title: "HRMS",
+    description:
+      "A Human Resource Management System built to manage employee records, attendance, and leave workflows.",
+    tech: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind CSS", "JWT"],
+  },
+  {
+    title: "Synthetix Studio",
+    description:
+      "A MERN-based AI video production engine designed to automate video generation and rendering workflows.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "AI APIs",
+      "Tailwind CSS",
+    ],
+  },
 ];
 
 export const experience = [
